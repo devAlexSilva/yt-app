@@ -2,13 +2,7 @@ import { Stack } from "@mui/material"
 import { categories } from "../utils/constants"
 import { useState } from "react"
 
-export const SideBar = () => {
-  const [selectedCategory, setSelectedCategory] = useState('New')
-  
-  function handleClickCategory(name) {
-    setSelectedCategory(name)
-  }
-
+export const SideBar = ({selectedCategory, handleClickCategory}) => {
   return (
     <Stack direction='row' sx={{ overflowY: 'auto', height: { sx: 'auto', md: '95%' }, flexDirection: { md: "column" } }}>
       {categories.map(category => (
