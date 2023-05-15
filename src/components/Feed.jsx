@@ -8,18 +8,13 @@ export const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState('New')
   const [videos, setVideos] = useState([{}])
 
-
-  const handleClickCategory = (name) => {
-    setSelectedCategory(name)
-  }
-
   useEffect(() => {
     try {
       (async () => {
         const data = await FetchApi(`search?part=snippet&q=${selectedCategory}`)
         setVideos(data?.items)
       })()
-      
+
     } catch (error) {
       console.log(error)
     }
@@ -29,7 +24,7 @@ export const Feed = () => {
   return (
     <Stack sx={{ flexDirection: { sx: 'column', md: 'row' } }}>
       <Box sx={{ height: { sx: 'auto', md: '92vh' }, borderRight: '1px solid #3D3D3D', px: { sx: 0, md: 2 } }}>
-        <SideBar selectedCategory={selectedCategory} handleClickCategory={handleClickCategory} />
+        <SideBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
         <Typography className='copyright' variant='body2' sx={{ mt: 1.5, color: '#FFF' }}>Lorem ipsum dolor sit amet</Typography>
       </Box>
 
@@ -38,9 +33,9 @@ export const Feed = () => {
           {selectedCategory}
           <span style={{ color: '#F31503' }}> videos</span>
         </Typography>
-      </Box>
 
-      <Videos videos={videos} />
+        <Videos videos={videos} />
+      </Box>
     </Stack>
   )
 }
