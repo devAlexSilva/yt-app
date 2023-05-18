@@ -11,7 +11,7 @@ export const VideoCard = ({ video }) => {
     <Card sx={{ width: { md: '320px', xs: '100%' }, boxShadow: 'none', borderRadius: 'none' }}>
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
         <CardMedia
-          image={snippet.thumbnails.high.url}
+          image={snippet.thumbnails.high.url || demoThumbnailUrl}
           alt={snippet.title}
           sx={{ width: 358, height: 180 }}
         />
@@ -25,7 +25,7 @@ export const VideoCard = ({ video }) => {
         
         <Link to={snippet.channelId ? `/channel/${snippet.channelId}` : demoChannelUrl}>
           <Typography variant='subtitle2' color='gray' fontWeight='bold'>
-            {snippet.demoChannelTitle || demoChannelTitle}
+            {snippet.channelTitle || demoChannelTitle}
             <CheckCircle sx={{fontSize: 14, color: 'gray', ml: '6px'}}/>
           </Typography>
         </Link>

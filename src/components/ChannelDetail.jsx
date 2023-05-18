@@ -30,7 +30,6 @@ export const ChannelDetail = () => {
           height: '300px'
         }}
         />
-        {console.log(details)}
         <ChannelCard channelDetails={details} marginTop='-110px' />
       </Box>
       <Box display='flex' p='2'>
