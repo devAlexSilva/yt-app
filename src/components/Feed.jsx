@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 
 
 export const Feed = () => {
-  const [selectedCategory, setSelectedCategory] = useState('New')
+  const [selectedCategory, setSelectedCategory] = useState('Novo')
   const [videos, setVideos] = useState([{}])
 
   useEffect(() => {

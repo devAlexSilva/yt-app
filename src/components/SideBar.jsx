@@ -1,6 +1,5 @@
 import { Stack } from "@mui/material"
 import { categories } from "../utils/constants"
-import { useState } from "react"
 
 export const SideBar = ({selectedCategory, setSelectedCategory}) => {
   return (

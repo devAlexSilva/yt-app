@@ -3,8 +3,9 @@ import { VideoCard } from "./"
 
 
 export const Videos = ({ videos }) => {
+
   return (
-    <Stack flexDirection='row' flexWrap='wrap' justifyContent='start' gap={2}>
+    <Stack flexDirection='row' flexWrap='wrap' justifyContent='start' alignItems='start' gap={2}>
       {
         videos.map((video, i) => (
           <Box key={i}>
